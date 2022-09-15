@@ -1,0 +1,3 @@
+[submodule "pug-y-ejs"]
+	path = pug-y-ejs
+	url = https://github.com/carlitosmcqueen/pug-y-ejs
