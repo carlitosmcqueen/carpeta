@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./include/head.ejs') %>
+
+<body>
+    <div class="container mt-3">
+        <%- include('./include/header.ejs') %>
+            <div class="jumbotron">
+                <h1>Vista de Productos</h1>
+                <br>
+                <% if(allProducts){ %>
+                    <div class="table-responsive">
+                        <table class="table table-dark">
+                            <tr>
+                                <th >Nombre</th>
+                                <th >Precio</th>
+                                <th >IMG</th>
+                               
+                            </tr>
+                            <% allProducts.forEach(product=>{ %>
+                                <tr>
+                                    
+                                    <td>
+                                        <%= product.title %>
+                                    </td>
+                                    <td>
+                                        $<%= product.precio %>
+                                    </td>
+                                    <td>
+                                        <img src="<%= product.thumbnail %>" width="60" height="60" >
+                                    </td> 
+                                </tr>
+                            <% }) %>
+                        </table>
+                    </div>
+                    <% } else{ %>
+                        <h3 class="alert alert-warning">No se encontraron productos</h3>
+                        <% } 
+                %>
+                            <br>
+                            <a href="/" type="button" class="btn btn-primary">Cargar un nuevo producto</a>
+
+            </div>
+    </div>
+</body>
+
+</html>
